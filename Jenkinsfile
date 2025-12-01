@@ -13,9 +13,7 @@ pipeline {
         }
         stage('Compile Stage') {
             steps {
-                 // changer ce chemin si ton pom.xml est ailleurs
-                    bat 'mvn clean compile'
-                }
+                bat 'mvn clean compile'   // pour Windows
             }
         }
     }
