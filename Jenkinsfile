@@ -1,11 +1,14 @@
 pipeline {
     agent any
-    tools { jdk 'JAVA_HOME', maven 'M2_HOME' }
+    tools { 
+        jdk 'java'      // correspond au JDK configuré
+        maven 'maven'   // correspond au Maven configuré
+    }
     stages {
         stage('GIT') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/hwafa/timesheetproject.git'
+                git branch: 'main',
+                    url: 'https://github.com/eyamosbeh/pipline-.git'
             }
         }
         stage('Compile Stage') {
