@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools { 
-        jdk 'java'      // correspond au JDK configuré
-        maven 'maven'   // correspond au Maven configuré
+        jdk 'java'
+        maven 'maven'
     }
     stages {
         stage('GIT') {
@@ -13,7 +13,9 @@ pipeline {
         }
         stage('Compile Stage') {
             steps {
-                bat 'mvn clean compile'   // pour Windows
+                dir('timesheetproject') {   // changer ce chemin si ton pom.xml est ailleurs
+                    bat 'mvn clean compile'
+                }
             }
         }
     }
