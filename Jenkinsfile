@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Compile Stage') {
             steps {
-                dir('timesheetproject') {   // changer ce chemin si ton pom.xml est ailleurs
+                 // changer ce chemin si ton pom.xml est ailleurs
                     bat 'mvn clean compile'
                 }
             }
